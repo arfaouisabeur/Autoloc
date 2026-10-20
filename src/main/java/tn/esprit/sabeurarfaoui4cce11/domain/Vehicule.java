@@ -1,5 +1,6 @@
 package tn.esprit.sabeurarfaoui4cce11.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -45,6 +46,7 @@ public class Vehicule {
     private StatutVehicule statut;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Agence agence;
 
     @OneToMany(mappedBy = "vehicule", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)

@@ -1,5 +1,6 @@
 package tn.esprit.sabeurarfaoui4cce11.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Employe {
     @Enumerated(EnumType.STRING)
     private RoleEmploye role;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Agence agence;
 }
